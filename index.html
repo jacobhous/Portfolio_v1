@@ -1,0 +1,586 @@
+<html lang="en" class="dark" style="scroll-behavior: smooth;"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jacob Housour | EHS &amp; Occupational Safety Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+    --color-bg: #18181b; 
+    --color-surface: #18181b;
+    --color-border: #27272a; 
+    --color-accent: #6366f1; 
+}
+
+body {
+    font-family: 'Geist', sans-serif;
+    background-color: var(--color-bg);
+    color: #d4d4d8; 
+}
+
+.font-serif-heading {
+    font-family: 'Lora', serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #18181b;
+}
+::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #52525b;
+}
+
+/* Animations */
+@keyframes scaleReveal {
+    from { opacity: 0; transform: scale(0.95) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-item {
+    opacity: 0; 
+    animation: scaleReveal 1.0s ease-out forwards;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Material Card Hover Effect */
+.material-card {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.material-card:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+    border-color: #3f3f46;
+}
+
+.selection-accent::selection {
+    background-color: rgba(99, 102, 241, 0.3);
+    color: #818cf8;
+}
+
+/* Chat Specific Styles */
+.chat-scroll::-webkit-scrollbar { width: 4px; }
+.chat-scroll::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 2px; }
+.typing-dot {
+    width: 6px; height: 6px; background: #9ca3af; border-radius: 50%;
+    animation: typing 1.4s infinite ease-in-out both;
+}
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+@keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+.fade-in-up { animation: fadeInUp 0.3s ease-out forwards; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Accordion details */
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+</style>
+</head>
+<body class="min-h-screen flex flex-col selection-accent overflow-x-hidden">
+
+<!-- Background Component -->
+<div class="aura-background-component fixed top-0 w-full h-screen -z-10" data-alpha-mask="80" style="mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <div class="flex fixed top-0 left-0 bg-gray-900 w-full h-screen items-center justify-center" style="background: #181c21;">
+    <div class="overflow-hidden flex relative w-full h-full items-center justify-center" style="background: repeating-linear-gradient(135deg, #232526 0px, #232526 60px, #23252699 70px, #414345 130px);">
+      <svg preserveAspectRatio="xMidYMid slice" height="100%" width="100%" class="absolute z-10 animate-cube-move opacity-70 w-[100px] h-[100px]" style="left: -30%; top: -20%; color: rgb(0, 0, 0);" viewBox="0 0 120 104">
+        <defs>
+          <linearGradient id="cube-dark" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#232526" offset="0%"></stop><stop stop-color="#414345" offset="100%"></stop></linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+  <script>lucide.createIcons();</script>
+</div>
+
+<!-- Navigation -->
+<nav class="sticky top-0 z-50 w-full backdrop-blur-md border-b bg-neutral-900/80 border-neutral-800">
+    <div class="max-w-4xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-2 animate-item">
+            <div class="w-10 h-10 rounded flex items-center justify-center border text-indigo-500 bg-neutral-800 border-neutral-700">
+                <span class="font-serif-heading font-medium text-lg tracking-tight">JH</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-6 text-sm font-medium">
+            <a href="#research" class="hidden sm:block transition-colors animate-item delay-100 hover:text-indigo-400">Research</a>
+            <a href="#experience" class="hidden sm:block transition-colors animate-item delay-200 hover:text-indigo-400">Experience</a>
+            <a href="#contact" class="flex items-center gap-2 px-4 py-2 rounded bg-indigo-500/10 border border-indigo-500/20 hover:bg-indigo-500/20 transition-all animate-item delay-300 text-indigo-400">
+                <iconify-icon icon="solar:letter-linear" width="18"></iconify-icon>
+                <span>Contact</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<main class="flex-grow w-full max-w-4xl mx-auto pt-16 px-6 pb-16 space-y-24">
+
+    <!-- Hero Section -->
+    <section class="space-y-8 pb-8">
+        <div class="space-y-4">
+            <div class="flex gap-3 animate-item delay-100 items-center">
+                <span class="w-2 h-2 rounded-full bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,0.5)]"></span>
+                <span class="font-mono text-xs tracking-widest uppercase text-indigo-400">EHS &amp; Process Safety Specialist</span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif-heading font-normal leading-tight animate-item delay-200 text-white">
+                Jacob Housour.
+            </h1>
+            <p class="text-lg max-w-2xl leading-relaxed animate-item delay-300 text-neutral-400">
+                Advancing industrial safety through AI-driven hazard analysis and process risk reduction. Currently pursuing an M.S. in Occupational Safety at Iowa State University.
+            </p>
+        </div>
+
+        <div class="flex flex-wrap gap-4 animate-item delay-400">
+            <div class="flex items-center gap-2 text-sm text-neutral-500 border px-3 py-1.5 rounded border-neutral-800 bg-neutral-900">
+                <iconify-icon icon="solar:map-point-linear" class="text-indigo-500"></iconify-icon>
+                Ames, IA
+            </div>
+            <a href="https://www.linkedin.com/in/jacobhousour" target="_blank" class="flex items-center gap-2 text-sm border px-3 py-1.5 rounded hover:border-indigo-500/50 transition-colors text-neutral-400 border-neutral-800 bg-neutral-900 hover:text-indigo-400">
+                <iconify-icon icon="solar:link-circle-linear"></iconify-icon>
+                LinkedIn
+            </a>
+        </div>
+    </section>
+
+    <!-- 1. AI Chat Interface (Below Hero) -->
+    <section class="animate-item delay-500 w-full">
+        <div class="bg-neutral-900/80 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl backdrop-blur-sm">
+            <!-- Header -->
+            <div class="bg-neutral-900 border-b border-neutral-800 p-4 flex items-center gap-3">
+                <div class="w-8 h-8 rounded bg-indigo-500/10 flex items-center justify-center text-indigo-400 border border-indigo-500/20">
+                    <iconify-icon icon="solar:stars-minimalistic-linear" width="18"></iconify-icon>
+                </div>
+                <div>
+                    <h3 class="text-sm font-medium text-white">Ask Jacob's AI Assistant</h3>
+                    <p class="text-xs text-neutral-500">Powered by Resume Data</p>
+                </div>
+            </div>
+
+            <!-- Chat Window -->
+            <div id="chat-window" class="h-80 sm:h-96 overflow-y-auto p-4 space-y-4 chat-scroll bg-neutral-950/30">
+                <!-- Initial Message -->
+                <div class="flex gap-3">
+                    <div class="w-8 h-8 rounded-full bg-neutral-800 flex-shrink-0 flex items-center justify-center border border-neutral-700">
+                        <iconify-icon icon="solar:user-linear" class="text-neutral-400" width="16"></iconify-icon>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="bg-neutral-800 border border-neutral-700 rounded-2xl rounded-tl-none px-4 py-2.5 text-sm text-neutral-300 inline-block">
+                            Hi! I can answer questions about Jacob's research, experience, and skills. What would you like to know?
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="p-4 bg-neutral-900 border-t border-neutral-800">
+                <div class="relative flex items-center gap-2">
+                    <input type="text" id="chat-input" placeholder="Ask about education, SafeGardian AI, or work history..." class="w-full bg-neutral-950 border border-neutral-800 text-neutral-200 text-sm rounded-lg pl-4 pr-12 py-3 focus:outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/20 transition-all placeholder:text-neutral-600">
+                    <button id="send-btn" class="absolute right-2 p-1.5 rounded-md bg-indigo-600 hover:bg-indigo-500 text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                        <iconify-icon icon="solar:arrow-up-linear" width="20"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research" class="space-y-8 animate-item delay-200">
+        <div class="flex items-center justify-between">
+            <h2 class="text-3xl font-serif-heading font-normal text-white">Research &amp; Innovation</h2>
+            <iconify-icon icon="solar:atom-linear" width="28" class="text-indigo-500"></iconify-icon>
+        </div>
+        
+        <div class="material-card border p-8 shadow-sm relative overflow-hidden group border-neutral-800 bg-neutral-900">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-3xl -mr-16 -mt-16 transition-opacity group-hover:bg-indigo-500/10"></div>
+            <div class="relative z-10">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+                    <div>
+                        <h3 class="text-xl font-medium mb-1 text-white">SafeGardian AI Project</h3>
+                        <p class="text-sm text-indigo-400">Graduate Research Assistant | Iowa State University</p>
+                    </div>
+                    <span class="text-xs font-mono text-neutral-500 border px-2 py-1 rounded border-neutral-800">Jan 2026 – Present</span>
+                </div>
+                <p class="leading-relaxed mb-6 text-neutral-400">
+                    Developing an artificial intelligence system trained on OSHA regulatory standards to revolutionize hazard identification.
+                </p>
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3 text-sm text-neutral-400">
+                        <iconify-icon icon="solar:check-circle-linear" class="text-indigo-500 mt-0.5 min-w-[16px]"></iconify-icon>
+                        <span>Structuring and integrating OSHA regulatory content for AI model training.</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-neutral-400">
+                        <iconify-icon icon="solar:check-circle-linear" class="text-indigo-500 mt-0.5 min-w-[16px]"></iconify-icon>
+                        <span>Evaluating system accuracy in interpreting safety standards.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="space-y-8 animate-item delay-300">
+        <h2 class="text-3xl font-serif-heading font-normal text-white">Education</h2>
+        <div class="space-y-6">
+            <div class="group material-card border-l-2 border-l-indigo-500 border-y border-r p-6 pl-6 border-neutral-800 bg-neutral-900/50">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-baseline mb-2">
+                    <h3 class="text-lg font-medium text-white">M.S. Occupational Safety</h3>
+                    <span class="text-sm text-neutral-500 font-mono">Expected May 2028</span>
+                </div>
+                <div class="text-sm mb-2 text-neutral-400">Iowa State University, Ames, IA</div>
+                <div class="inline-block text-xs bg-indigo-500/5 px-2 py-1 rounded border border-indigo-500/10 text-indigo-400">GPA: 3.33/4.00</div>
+            </div>
+            <div class="group material-card border-l-2 border-y border-r p-6 pl-6 transition-colors border-l-neutral-700 hover:border-l-indigo-400 border-neutral-800 bg-neutral-900/50">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-baseline mb-2">
+                    <h3 class="text-lg font-medium text-white">B.S. Industrial Technology</h3>
+                    <span class="text-sm text-neutral-500 font-mono">May 2026</span>
+                </div>
+                <div class="text-sm text-neutral-400">Iowa State University, Ames, IA</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section id="experience" class="space-y-8 animate-item delay-400">
+        <div class="flex items-center justify-between">
+            <h2 class="text-3xl font-serif-heading font-normal text-white">Experience</h2>
+            <iconify-icon icon="solar:briefcase-linear" width="28" class="text-neutral-600"></iconify-icon>
+        </div>
+        <div class="border divide-y border-neutral-800 divide-neutral-800 bg-neutral-900">
+            <!-- Koch Fertilizer -->
+            <div class="p-8 transition-colors hover:bg-neutral-800/30">
+                <div class="flex flex-col md:flex-row justify-between mb-4">
+                    <div>
+                        <h3 class="text-xl font-medium text-white">Operations Intern</h3>
+                        <div class="flex items-center gap-2 mt-1 text-indigo-400">
+                            <iconify-icon icon="solar:factory-linear"></iconify-icon>
+                            Koch Fertilizer, LLC
+                        </div>
+                    </div>
+                    <div class="text-right md:text-right mt-2 md:mt-0">
+                        <span class="block text-sm text-neutral-500 font-mono">May 2025 – Aug 2025</span>
+                    </div>
+                </div>
+                <p class="text-sm text-neutral-400 mt-4 leading-relaxed">
+                    Monitored control systems, logged plant operations in UAN production, and collaborated with engineering interns on process improvements and safety hazard recognition.
+                </p>
+            </div>
+            <!-- Dicks Sporting Goods -->
+            <div class="p-8 transition-colors hover:bg-neutral-800/30">
+                <div class="flex flex-col md:flex-row justify-between mb-4">
+                    <div>
+                        <h3 class="text-xl font-medium text-white">Senior Bike Lead</h3>
+                        <div class="flex items-center gap-2 mt-1 text-neutral-400">
+                            <iconify-icon icon="solar:shop-linear"></iconify-icon>
+                            DICK'S Sporting Goods
+                        </div>
+                    </div>
+                    <div class="text-right md:text-right mt-2 md:mt-0">
+                        <span class="block text-sm text-neutral-500 font-mono">Apr 2020 – Aug 2024</span>
+                    </div>
+                </div>
+                <p class="text-sm text-neutral-400 mt-4 leading-relaxed">
+                    Improved bike assembly efficiency by 25–30% through mentorship and training, implementing Excel-based tracking for service orders.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Leadership -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 animate-item delay-500">
+        <section class="space-y-8">
+            <h2 class="text-3xl font-serif-heading font-normal text-white">Leadership</h2>
+            <div class="space-y-6">
+                <div class="pl-4 border-l border-neutral-800">
+                    <h4 class="font-medium text-white">Eagle Scout</h4>
+                    <p class="text-sm text-neutral-400 mt-1">Led 'Wrapped in Love' drive coordinating 18 volunteers.</p>
+                </div>
+                <div class="pl-4 border-l border-neutral-800">
+                    <h4 class="font-medium text-white">Treasurer</h4>
+                    <p class="text-xs text-neutral-500 uppercase mt-1">Industrial Technology Club</p>
+                </div>
+            </div>
+        </section>
+        <section class="space-y-8">
+            <h2 class="text-3xl font-serif-heading font-normal text-white">Technical Skills</h2>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 text-xs rounded border bg-neutral-800 text-neutral-300 border-neutral-700">SolidWorks</span>
+                <span class="px-3 py-1 text-xs rounded border bg-neutral-800 text-neutral-300 border-neutral-700">Autodesk Inventor</span>
+                <span class="px-3 py-1 text-xs rounded border bg-neutral-800 text-neutral-300 border-neutral-700">AutoCAD</span>
+                <span class="px-3 py-1 text-xs rounded border bg-neutral-800 text-neutral-300 border-neutral-700">MS Office Suite</span>
+                <span class="px-3 py-1 text-xs rounded border bg-neutral-800 text-neutral-300 border-neutral-700">OSHA 10-Hour</span>
+            </div>
+        </section>
+    </div>
+
+    <!-- 2. Q&A Section -->
+    <section class="space-y-8 border-t border-neutral-800 pt-16">
+        <div class="flex items-center justify-between">
+            <h2 class="text-3xl font-serif-heading font-normal text-white">Common Questions</h2>
+            <iconify-icon icon="solar:question-circle-linear" width="28" class="text-neutral-600"></iconify-icon>
+        </div>
+        
+        <div class="space-y-4">
+            <!-- Q1 -->
+            <details class="group bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden transition-all hover:border-neutral-700">
+                <summary class="flex justify-between items-center cursor-pointer p-6 font-medium text-neutral-200 select-none">
+                    <span>What is your primary area of specialization?</span>
+                    <span class="transition-transform duration-300 group-open:rotate-180 text-neutral-500">
+                        <iconify-icon icon="solar:alt-arrow-down-linear" width="20"></iconify-icon>
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-sm text-neutral-400 leading-relaxed border-t border-neutral-800/50 pt-4">
+                    I specialize in Occupational Safety and Industrial Technology, with a focus on integrating AI into hazard identification and regulatory compliance. My background combines hands-on manufacturing operations with advanced safety research.
+                </div>
+            </details>
+
+            <!-- Q2 -->
+            <details class="group bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden transition-all hover:border-neutral-700">
+                <summary class="flex justify-between items-center cursor-pointer p-6 font-medium text-neutral-200 select-none">
+                    <span>Are you open to relocation?</span>
+                    <span class="transition-transform duration-300 group-open:rotate-180 text-neutral-500">
+                        <iconify-icon icon="solar:alt-arrow-down-linear" width="20"></iconify-icon>
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-sm text-neutral-400 leading-relaxed border-t border-neutral-800/50 pt-4">
+                    Yes, while I am currently based in Ames, Iowa, for my studies, I am open to discussing opportunities that may require relocation within the United States.
+                </div>
+            </details>
+
+            <!-- Q3 -->
+            <details class="group bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden transition-all hover:border-neutral-700">
+                <summary class="flex justify-between items-center cursor-pointer p-6 font-medium text-neutral-200 select-none">
+                    <span>What is the goal of the SafeGardian AI project?</span>
+                    <span class="transition-transform duration-300 group-open:rotate-180 text-neutral-500">
+                        <iconify-icon icon="solar:alt-arrow-down-linear" width="20"></iconify-icon>
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-sm text-neutral-400 leading-relaxed border-t border-neutral-800/50 pt-4">
+                    The project aims to create an AI system trained specifically on OSHA regulations. This tool helps interpret safety standards accurately and identifies potential hazards in complex scenarios, bridging the gap between raw data and actionable safety compliance.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- 3. Contact Me Section (Above Footer) -->
+    <section id="contact" class="pt-16 border-t border-neutral-800">
+        <div class="flex items-center gap-3 mb-8">
+            <h2 class="text-3xl font-serif-heading font-normal text-white">Get in Touch</h2>
+            <div class="h-px bg-neutral-800 flex-grow ml-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Contact Info -->
+            <div class="space-y-6">
+                <p class="text-neutral-400 leading-relaxed">
+                    I'm currently available for discussions regarding safety innovation, AI in manufacturing, or full-time opportunities post-graduation.
+                </p>
+                
+                <div class="space-y-4">
+                    <a href="mailto:jacobhousour@gmail.com" class="flex items-center gap-4 p-4 rounded border border-neutral-800 bg-neutral-900 hover:border-indigo-500/30 transition-colors group">
+                        <div class="w-10 h-10 rounded bg-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-indigo-400">
+                            <iconify-icon icon="solar:letter-linear" width="20"></iconify-icon>
+                        </div>
+                        <div>
+                            <div class="text-xs text-neutral-500 uppercase tracking-wide">Email</div>
+                            <div class="text-sm text-white">jacobhousour@gmail.com</div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/jacobhousour" target="_blank" class="flex items-center gap-4 p-4 rounded border border-neutral-800 bg-neutral-900 hover:border-indigo-500/30 transition-colors group">
+                        <div class="w-10 h-10 rounded bg-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-indigo-400">
+                            <iconify-icon icon="solar:link-circle-linear" width="20"></iconify-icon>
+                        </div>
+                        <div>
+                            <div class="text-xs text-neutral-500 uppercase tracking-wide">Social</div>
+                            <div class="text-sm text-white">LinkedIn Profile</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="space-y-4 bg-neutral-900 p-6 rounded-xl border border-neutral-800">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <label class="text-xs text-neutral-500 uppercase tracking-wider">Name</label>
+                        <input type="text" class="w-full bg-neutral-950 border border-neutral-800 rounded p-2.5 text-sm text-white focus:border-indigo-500 focus:outline-none transition-colors">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs text-neutral-500 uppercase tracking-wider">Email</label>
+                        <input type="email" class="w-full bg-neutral-950 border border-neutral-800 rounded p-2.5 text-sm text-white focus:border-indigo-500 focus:outline-none transition-colors">
+                    </div>
+                </div>
+                <div class="space-y-1">
+                    <label class="text-xs text-neutral-500 uppercase tracking-wider">Message</label>
+                    <textarea rows="4" class="w-full bg-neutral-950 border border-neutral-800 rounded p-2.5 text-sm text-white focus:border-indigo-500 focus:outline-none transition-colors"></textarea>
+                </div>
+                <button type="button" class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded text-sm font-medium transition-colors flex items-center justify-center gap-2">
+                    Send Message
+                    <iconify-icon icon="solar:plain-linear" width="16"></iconify-icon>
+                </button>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-neutral-800 bg-neutral-950">
+    <div class="max-w-4xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="text-neutral-500 text-sm">
+            © 2025 Jacob Housour.
+        </div>
+        <div class="flex gap-6">
+            <a href="#" class="text-neutral-500 transition-colors hover:text-indigo-400">
+                Back to Top
+            </a>
+        </div>
+    </div>
+</footer>
+
+<!-- Chat Logic Script -->
+<script>
+    const chatInput = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('send-btn');
+    const chatWindow = document.getElementById('chat-window');
+
+    // Simple Knowledge Base
+    const knowledgeBase = [
+        {
+            keywords: ['education', 'school', 'university', 'degree', 'gpa', 'study', 'major'],
+            response: "Jacob is currently pursuing an M.S. in Occupational Safety at Iowa State University (Expected May 2028, GPA 3.33). He also holds a B.S. in Industrial Technology (May 2026) with a concentration in Occupational Safety & Manufacturing."
+        },
+        {
+            keywords: ['experience', 'work', 'job', 'career', 'intern', 'koch', 'fertilizer', 'dicks', 'sporting'],
+            response: "Jacob has professional experience as an Operations Intern at Koch Fertilizer, LLC, where he monitored UAN production and troubleshot systems. Previously, he served as a Senior Bike Lead at DICK'S Sporting Goods for over 4 years, improving assembly efficiency by ~30%."
+        },
+        {
+            keywords: ['research', 'project', 'ai', 'safegardian', 'safety', 'osha', 'intelligence'],
+            response: "Jacob is a Graduate Research Assistant for the SafeGardian AI Project. He is developing an AI system trained on OSHA regulatory standards to revolutionize hazard identification and compliance in manufacturing environments."
+        },
+        {
+            keywords: ['skill', 'software', 'tool', 'cad', 'technology', 'tech', 'solidworks', 'autocad'],
+            response: "Jacob is proficient in SolidWorks, Autodesk Inventor, AutoCAD, and the MS Office Suite. He also holds certifications including OSHA 10-Hour General Industry and is a PADI Certified Scuba Diver."
+        },
+        {
+            keywords: ['contact', 'email', 'phone', 'reach', 'address', 'linkedin'],
+            response: "You can reach Jacob via email at jacobhousour@gmail.com, or connect with him on LinkedIn. He is currently based in Ames, IA."
+        },
+        {
+            keywords: ['about', 'who', 'jacob', 'summary', 'profile', 'bio'],
+            response: "Jacob Housour is an EHS & Process Safety Specialist advancing industrial safety through AI-driven hazard analysis. He combines technical engineering skills with safety regulations."
+        }
+    ];
+
+    const fallbackResponse = "I don’t see that specific information listed in my database, but feel free to contact Jacob directly using the form below!";
+
+    // Chat Functions
+    function addMessage(text, isUser = false) {
+        const wrapper = document.createElement('div');
+        wrapper.className = `flex gap-3 fade-in-up ${isUser ? 'flex-row-reverse' : ''}`;
+        
+        const icon = document.createElement('div');
+        icon.className = `w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center border ${isUser ? 'bg-indigo-600 border-indigo-500 text-white' : 'bg-neutral-800 border-neutral-700 text-neutral-400'}`;
+        icon.innerHTML = `<iconify-icon icon="${isUser ? 'solar:user-linear' : 'solar:stars-minimalistic-linear'}" width="16"></iconify-icon>`;
+
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'space-y-1 max-w-[80%]';
+        
+        const bubble = document.createElement('div');
+        bubble.className = `${isUser ? 'bg-indigo-600 text-white border-indigo-500' : 'bg-neutral-800 text-neutral-300 border-neutral-700'} border rounded-2xl px-4 py-2.5 text-sm inline-block ${isUser ? 'rounded-tr-none' : 'rounded-tl-none'}`;
+        bubble.textContent = text;
+
+        contentDiv.appendChild(bubble);
+        wrapper.appendChild(icon);
+        wrapper.appendChild(contentDiv);
+        
+        chatWindow.appendChild(wrapper);
+        scrollToBottom();
+    }
+
+    function addTypingIndicator() {
+        const wrapper = document.createElement('div');
+        wrapper.id = 'typing-indicator';
+        wrapper.className = 'flex gap-3 fade-in-up';
+        
+        const icon = document.createElement('div');
+        icon.className = 'w-8 h-8 rounded-full bg-neutral-800 flex-shrink-0 flex items-center justify-center border border-neutral-700 text-neutral-400';
+        icon.innerHTML = '<iconify-icon icon="solar:stars-minimalistic-linear" width="16"></iconify-icon>';
+
+        const bubble = document.createElement('div');
+        bubble.className = 'bg-neutral-800 border border-neutral-700 rounded-2xl rounded-tl-none px-4 py-3.5 flex gap-1 items-center h-[42px]';
+        
+        bubble.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+
+        wrapper.appendChild(icon);
+        wrapper.appendChild(bubble);
+        chatWindow.appendChild(wrapper);
+        scrollToBottom();
+    }
+
+    function removeTypingIndicator() {
+        const el = document.getElementById('typing-indicator');
+        if (el) el.remove();
+    }
+
+    function scrollToBottom() {
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
+
+    function getBotResponse(input) {
+        const lowerInput = input.toLowerCase();
+        for (const item of knowledgeBase) {
+            if (item.keywords.some(key => lowerInput.includes(key))) {
+                return item.response;
+            }
+        }
+        return fallbackResponse;
+    }
+
+    async function handleSend() {
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        addMessage(text, true);
+        chatInput.value = '';
+        sendBtn.disabled = true;
+
+        addTypingIndicator();
+
+        // Simulate network delay
+        setTimeout(() => {
+            removeTypingIndicator();
+            const response = getBotResponse(text);
+            addMessage(response, false);
+            sendBtn.disabled = false;
+        }, 1000 + Math.random() * 500);
+    }
+
+    // Event Listeners
+    sendBtn.addEventListener('click', handleSend);
+    
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleSend();
+    });
+
+    chatInput.addEventListener('input', () => {
+        sendBtn.disabled = chatInput.value.trim() === '';
+    });
+    
+    // Initial state
+    sendBtn.disabled = true;
+</script>
+
+
+</body></html>
