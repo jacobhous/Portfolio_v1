@@ -83,9 +83,6 @@ body {
 .fade-in-up { animation: fadeInUp 0.3s ease-out forwards; }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-/* Accordion details */
-details > summary { list-style: none; }
-details > summary::-webkit-details-marker { display: none; }
 </style>
 </head>
 <body class="min-h-screen flex flex-col selection-accent overflow-x-hidden">
@@ -153,7 +150,7 @@ details > summary::-webkit-details-marker { display: none; }
         </div>
     </section>
 
-    <!-- 1. AI Chat Interface (Below Hero) -->
+    <!-- AI Chat Interface -->
     <section class="animate-item delay-500 w-full">
         <div class="bg-neutral-900/80 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl backdrop-blur-sm">
             <!-- Header -->
@@ -301,19 +298,28 @@ details > summary::-webkit-details-marker { display: none; }
         <section class="space-y-8">
             <h2 class="text-3xl font-serif-heading font-normal text-white">Leadership</h2>
             <div class="space-y-6">
-                <div class="pl-4 border-l border-neutral-800">
-                    <h4 class="font-medium text-white">Eagle Scout</h4>
-                    <p class="text-sm text-neutral-400 mt-1">Led 'Wrapped in Love' drive coordinating 18 volunteers.</p>
+                <!-- Restyled Leadership Cards -->
+                <div class="group material-card border-l-2 border-y border-r p-6 pl-6 transition-colors border-l-neutral-700 hover:border-l-indigo-400 border-neutral-800 bg-neutral-900/50">
+                    <div class="flex flex-col justify-between mb-2">
+                        <h3 class="text-lg font-medium text-white">Eagle Scout</h3>
+                        <span class="text-xs text-neutral-500 uppercase mt-1">Boy Scouts of America</span>
+                    </div>
+                    <p class="text-sm text-neutral-400">Led 'Wrapped in Love' drive coordinating 18 volunteers for community service.</p>
                 </div>
-                <div class="pl-4 border-l border-neutral-800">
-                    <h4 class="font-medium text-white">Treasurer</h4>
-                    <p class="text-xs text-neutral-500 uppercase mt-1">Industrial Technology Club</p>
+
+                <div class="group material-card border-l-2 border-y border-r p-6 pl-6 transition-colors border-l-neutral-700 hover:border-l-indigo-400 border-neutral-800 bg-neutral-900/50">
+                    <div class="flex flex-col justify-between mb-2">
+                        <h3 class="text-lg font-medium text-white">Treasurer</h3>
+                        <span class="text-xs text-neutral-500 uppercase mt-1">Industrial Technology Club</span>
+                    </div>
+                    <p class="text-sm text-neutral-400">Managed finances and budget allocation for student organization activities.</p>
                 </div>
             </div>
         </section>
+        
         <section class="space-y-8">
             <h2 class="text-3xl font-serif-heading font-normal text-white">Technical Skills</h2>
-            <div class="flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-2 content-start">
                 <span class="px-3 py-1 text-xs rounded border bg-neutral-800 text-neutral-300 border-neutral-700">SolidWorks</span>
                 <span class="px-3 py-1 text-xs rounded border bg-neutral-800 text-neutral-300 border-neutral-700">Autodesk Inventor</span>
                 <span class="px-3 py-1 text-xs rounded border bg-neutral-800 text-neutral-300 border-neutral-700">AutoCAD</span>
@@ -323,56 +329,7 @@ details > summary::-webkit-details-marker { display: none; }
         </section>
     </div>
 
-    <!-- 2. Q&A Section -->
-    <section class="space-y-8 border-t border-neutral-800 pt-16">
-        <div class="flex items-center justify-between">
-            <h2 class="text-3xl font-serif-heading font-normal text-white">Common Questions</h2>
-            <iconify-icon icon="solar:question-circle-linear" width="28" class="text-neutral-600"></iconify-icon>
-        </div>
-        
-        <div class="space-y-4">
-            <!-- Q1 -->
-            <details class="group bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden transition-all hover:border-neutral-700">
-                <summary class="flex justify-between items-center cursor-pointer p-6 font-medium text-neutral-200 select-none">
-                    <span>What is your primary area of specialization?</span>
-                    <span class="transition-transform duration-300 group-open:rotate-180 text-neutral-500">
-                        <iconify-icon icon="solar:alt-arrow-down-linear" width="20"></iconify-icon>
-                    </span>
-                </summary>
-                <div class="px-6 pb-6 text-sm text-neutral-400 leading-relaxed border-t border-neutral-800/50 pt-4">
-                    I specialize in Occupational Safety and Industrial Technology, with a focus on integrating AI into hazard identification and regulatory compliance. My background combines hands-on manufacturing operations with advanced safety research.
-                </div>
-            </details>
-
-            <!-- Q2 -->
-            <details class="group bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden transition-all hover:border-neutral-700">
-                <summary class="flex justify-between items-center cursor-pointer p-6 font-medium text-neutral-200 select-none">
-                    <span>Are you open to relocation?</span>
-                    <span class="transition-transform duration-300 group-open:rotate-180 text-neutral-500">
-                        <iconify-icon icon="solar:alt-arrow-down-linear" width="20"></iconify-icon>
-                    </span>
-                </summary>
-                <div class="px-6 pb-6 text-sm text-neutral-400 leading-relaxed border-t border-neutral-800/50 pt-4">
-                    Yes, while I am currently based in Ames, Iowa, for my studies, I am open to discussing opportunities that may require relocation within the United States.
-                </div>
-            </details>
-
-            <!-- Q3 -->
-            <details class="group bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden transition-all hover:border-neutral-700">
-                <summary class="flex justify-between items-center cursor-pointer p-6 font-medium text-neutral-200 select-none">
-                    <span>What is the goal of the SafeGardian AI project?</span>
-                    <span class="transition-transform duration-300 group-open:rotate-180 text-neutral-500">
-                        <iconify-icon icon="solar:alt-arrow-down-linear" width="20"></iconify-icon>
-                    </span>
-                </summary>
-                <div class="px-6 pb-6 text-sm text-neutral-400 leading-relaxed border-t border-neutral-800/50 pt-4">
-                    The project aims to create an AI system trained specifically on OSHA regulations. This tool helps interpret safety standards accurately and identifies potential hazards in complex scenarios, bridging the gap between raw data and actionable safety compliance.
-                </div>
-            </details>
-        </div>
-    </section>
-
-    <!-- 3. Contact Me Section (Above Footer) -->
+    <!-- Contact Me Section -->
     <section id="contact" class="pt-16 border-t border-neutral-800">
         <div class="flex items-center gap-3 mb-8">
             <h2 class="text-3xl font-serif-heading font-normal text-white">Get in Touch</h2>
@@ -433,6 +390,31 @@ details > summary::-webkit-details-marker { display: none; }
         </div>
     </section>
 
+    <!-- Systems Experiment (Dino Game) -->
+    <section class="flex flex-col items-center justify-center border-t border-neutral-800 pt-16 pb-8">
+        <div class="mb-4 text-center">
+            <p class="text-[10px] uppercase tracking-widest text-neutral-500 font-mono">
+                A small systems experiment — inspired by the offline Chrome dinosaur
+            </p>
+        </div>
+        <div class="relative group">
+            <canvas id="dinoGame" width="600" height="150" class="border border-neutral-800 bg-neutral-950 rounded cursor-pointer select-none max-w-full"></canvas>
+            
+            <div id="game-start-overlay" class="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-[1px]">
+                <p class="text-xs font-mono text-white bg-neutral-900 px-3 py-1.5 rounded border border-neutral-700">Press Space or Tap to Start</p>
+            </div>
+            
+            <div id="game-over-overlay" class="hidden absolute inset-0 flex flex-col items-center justify-center bg-black/60 backdrop-blur-[1px]">
+                <p class="text-sm font-medium text-white mb-2">System Halted</p>
+                <button id="restart-btn" class="text-xs font-mono text-neutral-200 bg-neutral-800 hover:bg-neutral-700 px-3 py-1.5 rounded border border-neutral-600 transition-colors">Restart Process</button>
+            </div>
+        </div>
+        <div class="mt-2 text-xs text-neutral-600 font-mono flex justify-between w-full max-w-[600px] px-2">
+            <span>Status: <span id="game-status">Standby</span></span>
+            <span>Score: <span id="score-display">0000</span></span>
+        </div>
+    </section>
+
 </main>
 
 <!-- Footer -->
@@ -449,137 +431,229 @@ details > summary::-webkit-details-marker { display: none; }
     </div>
 </footer>
 
-<!-- Chat Logic Script -->
+<!-- Scripts -->
 <script>
+    // Chat Logic
     const chatInput = document.getElementById('chat-input');
     const sendBtn = document.getElementById('send-btn');
     const chatWindow = document.getElementById('chat-window');
 
-    // Simple Knowledge Base
     const knowledgeBase = [
-        {
-            keywords: ['education', 'school', 'university', 'degree', 'gpa', 'study', 'major'],
-            response: "Jacob is currently pursuing an M.S. in Occupational Safety at Iowa State University (Expected May 2028, GPA 3.33). He also holds a B.S. in Industrial Technology (May 2026) with a concentration in Occupational Safety & Manufacturing."
-        },
-        {
-            keywords: ['experience', 'work', 'job', 'career', 'intern', 'koch', 'fertilizer', 'dicks', 'sporting'],
-            response: "Jacob has professional experience as an Operations Intern at Koch Fertilizer, LLC, where he monitored UAN production and troubleshot systems. Previously, he served as a Senior Bike Lead at DICK'S Sporting Goods for over 4 years, improving assembly efficiency by ~30%."
-        },
-        {
-            keywords: ['research', 'project', 'ai', 'safegardian', 'safety', 'osha', 'intelligence'],
-            response: "Jacob is a Graduate Research Assistant for the SafeGardian AI Project. He is developing an AI system trained on OSHA regulatory standards to revolutionize hazard identification and compliance in manufacturing environments."
-        },
-        {
-            keywords: ['skill', 'software', 'tool', 'cad', 'technology', 'tech', 'solidworks', 'autocad'],
-            response: "Jacob is proficient in SolidWorks, Autodesk Inventor, AutoCAD, and the MS Office Suite. He also holds certifications including OSHA 10-Hour General Industry and is a PADI Certified Scuba Diver."
-        },
-        {
-            keywords: ['contact', 'email', 'phone', 'reach', 'address', 'linkedin'],
-            response: "You can reach Jacob via email at jacobhousour@gmail.com, or connect with him on LinkedIn. He is currently based in Ames, IA."
-        },
-        {
-            keywords: ['about', 'who', 'jacob', 'summary', 'profile', 'bio'],
-            response: "Jacob Housour is an EHS & Process Safety Specialist advancing industrial safety through AI-driven hazard analysis. He combines technical engineering skills with safety regulations."
-        }
+        { keywords: ['education', 'school', 'university', 'degree', 'gpa', 'study', 'major'], response: "Jacob is currently pursuing an M.S. in Occupational Safety at Iowa State University (Expected May 2028, GPA 3.33). He also holds a B.S. in Industrial Technology (May 2026)." },
+        { keywords: ['experience', 'work', 'job', 'career', 'intern', 'koch', 'fertilizer', 'dicks'], response: "Jacob has professional experience as an Operations Intern at Koch Fertilizer, LLC and as a Senior Bike Lead at DICK'S Sporting Goods." },
+        { keywords: ['research', 'project', 'ai', 'safegardian', 'safety', 'osha'], response: "Jacob is a Graduate Research Assistant for the SafeGardian AI Project, developing an AI system trained on OSHA standards." },
+        { keywords: ['skill', 'software', 'tool', 'cad', 'solidworks', 'autocad'], response: "Jacob is proficient in SolidWorks, Autodesk Inventor, AutoCAD, and the MS Office Suite. He also holds an OSHA 10-Hour certification." },
+        { keywords: ['contact', 'email', 'linkedin'], response: "You can reach Jacob via email at jacobhousour@gmail.com or via LinkedIn." }
     ];
 
-    const fallbackResponse = "I don’t see that specific information listed in my database, but feel free to contact Jacob directly using the form below!";
+    const fallbackResponse = "I don’t see that specific information listed, but feel free to contact Jacob directly!";
 
-    // Chat Functions
     function addMessage(text, isUser = false) {
         const wrapper = document.createElement('div');
         wrapper.className = `flex gap-3 fade-in-up ${isUser ? 'flex-row-reverse' : ''}`;
-        
         const icon = document.createElement('div');
         icon.className = `w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center border ${isUser ? 'bg-indigo-600 border-indigo-500 text-white' : 'bg-neutral-800 border-neutral-700 text-neutral-400'}`;
         icon.innerHTML = `<iconify-icon icon="${isUser ? 'solar:user-linear' : 'solar:stars-minimalistic-linear'}" width="16"></iconify-icon>`;
-
         const contentDiv = document.createElement('div');
         contentDiv.className = 'space-y-1 max-w-[80%]';
-        
         const bubble = document.createElement('div');
         bubble.className = `${isUser ? 'bg-indigo-600 text-white border-indigo-500' : 'bg-neutral-800 text-neutral-300 border-neutral-700'} border rounded-2xl px-4 py-2.5 text-sm inline-block ${isUser ? 'rounded-tr-none' : 'rounded-tl-none'}`;
         bubble.textContent = text;
-
         contentDiv.appendChild(bubble);
         wrapper.appendChild(icon);
         wrapper.appendChild(contentDiv);
-        
         chatWindow.appendChild(wrapper);
-        scrollToBottom();
-    }
-
-    function addTypingIndicator() {
-        const wrapper = document.createElement('div');
-        wrapper.id = 'typing-indicator';
-        wrapper.className = 'flex gap-3 fade-in-up';
-        
-        const icon = document.createElement('div');
-        icon.className = 'w-8 h-8 rounded-full bg-neutral-800 flex-shrink-0 flex items-center justify-center border border-neutral-700 text-neutral-400';
-        icon.innerHTML = '<iconify-icon icon="solar:stars-minimalistic-linear" width="16"></iconify-icon>';
-
-        const bubble = document.createElement('div');
-        bubble.className = 'bg-neutral-800 border border-neutral-700 rounded-2xl rounded-tl-none px-4 py-3.5 flex gap-1 items-center h-[42px]';
-        
-        bubble.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
-
-        wrapper.appendChild(icon);
-        wrapper.appendChild(bubble);
-        chatWindow.appendChild(wrapper);
-        scrollToBottom();
-    }
-
-    function removeTypingIndicator() {
-        const el = document.getElementById('typing-indicator');
-        if (el) el.remove();
-    }
-
-    function scrollToBottom() {
         chatWindow.scrollTop = chatWindow.scrollHeight;
-    }
-
-    function getBotResponse(input) {
-        const lowerInput = input.toLowerCase();
-        for (const item of knowledgeBase) {
-            if (item.keywords.some(key => lowerInput.includes(key))) {
-                return item.response;
-            }
-        }
-        return fallbackResponse;
     }
 
     async function handleSend() {
         const text = chatInput.value.trim();
         if (!text) return;
-
         addMessage(text, true);
         chatInput.value = '';
         sendBtn.disabled = true;
-
-        addTypingIndicator();
-
-        // Simulate network delay
         setTimeout(() => {
-            removeTypingIndicator();
-            const response = getBotResponse(text);
+            let response = fallbackResponse;
+            const lowerInput = text.toLowerCase();
+            for (const item of knowledgeBase) {
+                if (item.keywords.some(key => lowerInput.includes(key))) { response = item.response; break; }
+            }
             addMessage(response, false);
             sendBtn.disabled = false;
-        }, 1000 + Math.random() * 500);
+        }, 800);
+    }
+    
+    sendBtn.addEventListener('click', handleSend);
+    chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
+    chatInput.addEventListener('input', () => { sendBtn.disabled = chatInput.value.trim() === ''; });
+    sendBtn.disabled = true;
+
+
+    // --- Minimalist Dino Game Logic ---
+    const canvas = document.getElementById('dinoGame');
+    const ctx = canvas.getContext('2d');
+    const startOverlay = document.getElementById('game-start-overlay');
+    const gameOverOverlay = document.getElementById('game-over-overlay');
+    const restartBtn = document.getElementById('restart-btn');
+    const scoreDisplay = document.getElementById('score-display');
+    const statusDisplay = document.getElementById('game-status');
+
+    let gameRunning = false;
+    let animationId;
+    let score = 0;
+    let frameCount = 0;
+    
+    // Game Entities
+    const dino = {
+        x: 50, y: 110, w: 20, h: 20,
+        dy: 0, jumpPower: -6, gravity: 0.25, grounded: true,
+        draw() {
+            ctx.fillStyle = '#d4d4d8'; // Light gray
+            ctx.fillRect(this.x, this.y, this.w, this.h);
+        },
+        update() {
+            if (!this.grounded) {
+                this.dy += this.gravity;
+                this.y += this.dy;
+            }
+            if (this.y >= 110) { // Ground level
+                this.y = 110;
+                this.dy = 0;
+                this.grounded = true;
+            } else {
+                this.grounded = false;
+            }
+        },
+        jump() {
+            if (this.grounded) {
+                this.dy = this.jumpPower;
+                this.grounded = false;
+            }
+        }
+    };
+
+    let obstacles = [];
+    const obstacleSpeed = 3;
+
+    function spawnObstacle() {
+        // Random height variation for "cactus"
+        const height = 20 + Math.random() * 15;
+        obstacles.push({ x: canvas.width, y: 130 - height, w: 10, h: height, passed: false });
     }
 
-    // Event Listeners
-    sendBtn.addEventListener('click', handleSend);
+    function resetGame() {
+        score = 0;
+        frameCount = 0;
+        obstacles = [];
+        dino.y = 110;
+        dino.dy = 0;
+        scoreDisplay.textContent = '0000';
+        statusDisplay.textContent = 'Running';
+        gameOverOverlay.classList.add('hidden');
+        startOverlay.classList.add('hidden');
+        gameRunning = true;
+        animate();
+    }
+
+    function animate() {
+        if (!gameRunning) return;
+        
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Draw Ground Line
+        ctx.strokeStyle = '#3f3f46';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(0, 130);
+        ctx.lineTo(canvas.width, 130);
+        ctx.stroke();
+
+        // Update & Draw Dino
+        dino.update();
+        dino.draw();
+
+        // Obstacle Logic
+        frameCount++;
+        if (frameCount % 120 === 0 || (frameCount % 80 === 0 && score > 500)) { // Speed up spawn slightly
+            spawnObstacle();
+        }
+
+        for (let i = 0; i < obstacles.length; i++) {
+            let obs = obstacles[i];
+            obs.x -= obstacleSpeed;
+            
+            // Draw Obstacle
+            ctx.fillStyle = '#71717a';
+            ctx.fillRect(obs.x, obs.y, obs.w, obs.h);
+
+            // Collision
+            if (
+                dino.x < obs.x + obs.w &&
+                dino.x + dino.w > obs.x &&
+                dino.y < obs.y + obs.h &&
+                dino.h + dino.y > obs.y
+            ) {
+                gameOver();
+            }
+
+            // Cleanup
+            if (obs.x + obs.w < 0) {
+                obstacles.splice(i, 1);
+                i--;
+            }
+        }
+
+        // Score
+        if (frameCount % 10 === 0) {
+            score++;
+            scoreDisplay.textContent = score.toString().padStart(4, '0');
+        }
+
+        animationId = requestAnimationFrame(animate);
+    }
+
+    function gameOver() {
+        gameRunning = false;
+        statusDisplay.textContent = 'Halted';
+        gameOverOverlay.classList.remove('hidden');
+        cancelAnimationFrame(animationId);
+    }
+
+    // Controls
+    function handleJump(e) {
+        // Space or ArrowUp
+        if ((e.code === 'Space' || e.code === 'ArrowUp') && gameRunning) {
+            e.preventDefault();
+            dino.jump();
+        }
+        // Start game if on start screen
+        if ((e.code === 'Space' || e.code === 'ArrowUp') && !gameRunning && gameOverOverlay.classList.contains('hidden')) {
+            e.preventDefault();
+            resetGame();
+        }
+    }
+
+    window.addEventListener('keydown', handleJump);
     
-    chatInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') handleSend();
+    // Mouse/Touch start
+    canvas.addEventListener('click', () => {
+        if (!gameRunning && gameOverOverlay.classList.contains('hidden')) resetGame();
+        else if (gameRunning) dino.jump();
     });
 
-    chatInput.addEventListener('input', () => {
-        sendBtn.disabled = chatInput.value.trim() === '';
+    restartBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // prevent canvas click
+        resetGame();
     });
-    
-    // Initial state
-    sendBtn.disabled = true;
+
+    // Initial Draw
+    ctx.strokeStyle = '#3f3f46';
+    ctx.beginPath();
+    ctx.moveTo(0, 130);
+    ctx.lineTo(canvas.width, 130);
+    ctx.stroke();
+    dino.draw();
+
 </script>
 
 
